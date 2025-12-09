@@ -1,0 +1,126 @@
+/* Landing Page CSS Module */
+
+.heroSection {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: white;
+  padding: 8rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.15), transparent 70%);
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #fff, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* About Section */
+.aboutSection {
+  padding: 6rem 0;
+  background: white;
+}
+
+[data-theme='dark'] .aboutSection {
+  background: #0f172a;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutImage {
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.3s ease;
+}
+
+.aboutImage:hover {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+/* Reviews Section */
+.reviewsSection {
+  padding: 6rem 0;
+  background: #f8fafc;
+}
+
+[data-theme='dark'] .reviewsSection {
+  background: #1e293b;
+}
+
+.reviewGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.reviewCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .reviewCard {
+  background: #334155;
+}
+
+.reviewer {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewer strong {
+  color: var(--ifm-color-primary);
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+  color: white;
+  text-align: center;
+}
+
+.ctaSection h2 {
+  color: white;
+  font-size: 2.5rem;
+}
+
+/* Auth Modal Specifics Override */
+.modal {
+  color: #333;
+  /* Ensure modal text is readable in dark mode */
+}

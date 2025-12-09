@@ -1,0 +1,290 @@
+/* ============================================================================
+   Physical AI Book - Clean Documentation Theme
+   ============================================================================ */
+
+/* -------------------------------------------------------------------------- */
+/*                           CSS Variables & Theme                            */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  /* Primary Colors */
+  --ifm-color-primary: #ec4899;
+  --ifm-color-primary-dark: #db2777;
+  --ifm-color-primary-darker: #be185d;
+  --ifm-color-primary-darkest: #9d174d;
+  --ifm-color-primary-light: #f472b6;
+  --ifm-color-primary-lighter: #fbcfe8;
+  --ifm-color-primary-lightest: #fdf2f8;
+
+  /* Typography */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ifm-heading-font-family: 'Inter', -apple-system, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Layout */
+  --ifm-navbar-height: 3.75rem;
+  --ifm-global-radius: 8px;
+
+  /* Surfaces */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f8fafc;
+  --glass-border: rgba(0, 0, 0, 0.08);
+
+  /* Accent */
+  --accent-gradient: linear-gradient(135deg, #ec4899, #8b5cf6);
+}
+
+/* Dark Mode */
+[data-theme='dark'] {
+  --ifm-background-color: #0f1219;
+  --ifm-background-surface-color: #1a1f2e;
+  --ifm-font-color-base: #e2e8f0;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(139, 92, 246, 0.2);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Base Styles                                   */
+/* -------------------------------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Navbar                                        */
+/* -------------------------------------------------------------------------- */
+
+.navbar {
+  box-shadow: 0 1px 0 var(--glass-border);
+}
+
+.navbar__title {
+  font-weight: 700;
+}
+
+.navbar__link {
+  font-weight: 500;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--ifm-color-primary);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Sidebar                                       */
+/* -------------------------------------------------------------------------- */
+
+.menu__link {
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background: rgba(236, 72, 153, 0.08);
+  color: var(--ifm-color-primary);
+}
+
+.menu__link--active {
+  background: var(--accent-gradient) !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.menu__link--active:hover {
+  color: white !important;
+}
+
+/* Category labels */
+.menu__list-item-collapsible>.menu__link {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Content                                       */
+/* -------------------------------------------------------------------------- */
+
+.markdown h1:first-child {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+
+.markdown h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.markdown h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-top: 2rem;
+}
+
+.markdown p {
+  line-height: 1.75;
+}
+
+.markdown a {
+  color: var(--ifm-color-primary);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Code                                          */
+/* -------------------------------------------------------------------------- */
+
+code {
+  background: rgba(236, 72, 153, 0.1);
+  color: var(--ifm-color-primary-dark);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+[data-theme='dark'] code {
+  background: rgba(236, 72, 153, 0.15);
+  color: #f472b6;
+}
+
+/* Code blocks */
+div[class^='codeBlockContainer'] {
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          Admonitions                                       */
+/* -------------------------------------------------------------------------- */
+
+.admonition {
+  border-radius: 12px;
+  border: none;
+  border-left: 4px solid;
+  margin: 1.5rem 0;
+}
+
+.admonition.admonition-note,
+.admonition.admonition-info {
+  background: rgba(59, 130, 246, 0.08);
+  border-left-color: #3b82f6;
+}
+
+.admonition.admonition-tip {
+  background: rgba(16, 185, 129, 0.08);
+  border-left-color: #10b981;
+}
+
+.admonition.admonition-caution,
+.admonition.admonition-warning {
+  background: rgba(245, 158, 11, 0.08);
+  border-left-color: #f59e0b;
+}
+
+.admonition.admonition-danger {
+  background: rgba(239, 68, 68, 0.08);
+  border-left-color: #ef4444;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          Table of Contents                                 */
+/* -------------------------------------------------------------------------- */
+
+.table-of-contents__link {
+  color: var(--ifm-font-color-secondary);
+}
+
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Tables                                        */
+/* -------------------------------------------------------------------------- */
+
+table {
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background: var(--ifm-color-primary);
+  color: white;
+  font-weight: 600;
+}
+
+td,
+th {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--glass-border);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          Pagination                                        */
+/* -------------------------------------------------------------------------- */
+
+.pagination-nav__link {
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  transition: all 0.2s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          Footer                                            */
+/* -------------------------------------------------------------------------- */
+
+.footer {
+  background: var(--ifm-background-surface-color);
+}
+
+.footer__title {
+  color: var(--ifm-color-primary);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          Scrollbar (Dark)                                  */
+/* -------------------------------------------------------------------------- */
+
+[data-theme='dark'] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: rgba(236, 72, 153, 0.3);
+  border-radius: 4px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(236, 72, 153, 0.5);
+}
