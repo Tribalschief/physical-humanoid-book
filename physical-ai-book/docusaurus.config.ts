@@ -15,16 +15,16 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://panaversity.github.io',
+  url: 'https://Tribalschief.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/physical-ai-book/',
+  baseUrl: '/physical-humanoid-book/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'panaversity', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-book', // Usually your repo name.
-
+  organizationName: 'Tribalschief', // Usually your GitHub org/user name.
+  projectName: 'physical-humanoid-book', // Usually your repo name.
+  trailingSlash: false,
   onBrokenLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set

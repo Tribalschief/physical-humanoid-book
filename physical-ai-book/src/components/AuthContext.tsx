@@ -29,7 +29,9 @@ interface SignupData {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const AUTH_API_URL = 'http://localhost:4000/api/auth';
+import { getAuthUrl } from '../config';
+
+const AUTH_API_URL = `${getAuthUrl()}/api/auth`;
 
 export function AuthProvider({ children }: { children: ReactNode }) {
     const [user, setUser] = useState<User | null>(null);

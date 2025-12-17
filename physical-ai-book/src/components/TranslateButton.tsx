@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getApiUrl } from '../config';
 
 const TranslateButton = () => {
     const [translated, setTranslated] = useState<string | null>(null);
@@ -12,7 +13,7 @@ const TranslateButton = () => {
         const contentText = contentEl?.innerText || "No content found. Please navigate to a chapter.";
 
         try {
-            const res = await fetch('http://localhost:8000/api/translate', {
+            const res = await fetch(`${getApiUrl()}/api/translate`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text: contentText.substring(0, 800) })

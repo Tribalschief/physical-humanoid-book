@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { getApiUrl } from '../config';
 
-interface Message {
+// ... inside component
+const response = await fetch(`${getApiUrl()}/api/chat`, {
+
+    interface Message {
     sender: 'user' | 'bot';
     text: string;
     sources?: string[];
@@ -42,7 +45,7 @@ const ChatWidget = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('http://localhost:8000/api/chat', {
+            const response = await fetch(`${getApiUrl()}/api/chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

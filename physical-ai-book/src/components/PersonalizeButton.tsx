@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getApiUrl } from '../config';
 import { useAuth } from './AuthContext';
 
 const PersonalizeButton = () => {
@@ -25,7 +26,7 @@ const PersonalizeButton = () => {
         }
 
         try {
-            const res = await fetch('http://localhost:8000/api/personalize', {
+            const res = await fetch(`${getApiUrl()}/api/personalize`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
