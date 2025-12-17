@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { getApiUrl } from '../config';
 
 interface LanguageToggleProps {
     // Optional: pass the content container selector
@@ -34,7 +35,7 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({
         const truncatedText = textContent.substring(0, 2000);
 
         try {
-            const res = await fetch('http://localhost:8000/api/translate', {
+            const res = await fetch(`${getApiUrl()}/api/translate`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text: truncatedText })
