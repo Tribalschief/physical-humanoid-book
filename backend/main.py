@@ -22,8 +22,12 @@ app.add_middleware(
 )
 
 # Gemini client via OpenAI SDK Compatibility
+api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+    print("CRITICAL WARNING: GEMINI_API_KEY is missing!")
+
 openai_client = AsyncOpenAI(
-    api_key=os.getenv("GEMINI_API_KEY"),
+    api_key=api_key,
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
 
